@@ -4,3 +4,5 @@
 *.jar
 *.war
 *.ear
+/Netbeans/Calculadora/nbproject/private/
+/Netbeans/Monito/nbproject/private/
