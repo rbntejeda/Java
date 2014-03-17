@@ -1,0 +1,75 @@
+package game;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+
+public class monito {
+
+	private JFrame frame;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					monito window = new monito();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public monito() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.getContentPane().addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent evt) {
+			    private void formKeyPressed(java.awt.event.KeyEvent evt) {                                
+			        int paso = 10;
+			         if (evt.getKeyCode() == KeyEvent.VK_RIGHT ) {
+			            //System.out.println(nave.getX()+","+nave.getY());
+			            nave.setLocation(nave.getX()+paso, nave.getY());
+			    } else if (evt.getKeyCode() == KeyEvent.VK_LEFT ) {
+			            //System.out.println(nave.getX()+","+nave.getY());
+			            nave.setLocation(nave.getX()-paso, nave.getY());
+			    } else if (evt.getKeyCode() == KeyEvent.VK_UP ) {
+			            //System.out.println(nave.getX()+","+nave.getY());
+			            nave.setLocation(nave.getX(), nave.getY()-paso);
+			    } else if (evt.getKeyCode() == KeyEvent.VK_DOWN ) {
+			            //System.out.println(nave.getX()+","+nave.getY());
+			            nave.setLocation(nave.getX(), nave.getY()+paso);
+			    }
+			    }  
+			}
+		});
+		frame.setBounds(100, 100, 834, 586);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JLabel nave = new JLabel("");
+		nave.setIcon(new ImageIcon("C:\\xampp\\htdocs\\proyectos\\Java\\Eclipse\\Monito\\src\\image\\nave.png"));
+		nave.setBounds(391, 203, 114, 98);
+		frame.getContentPane().add(nave);
+		
+	}
+
+}

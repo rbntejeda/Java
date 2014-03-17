@@ -1,0 +1,13 @@
+import javax.swing.JPanel;
+
+
+public class Grafico1 extends JPanel {
+
+	/**
+	 * Create the panel.
+	 */
+	public Grafico1() {
+
+	}
+
+}
